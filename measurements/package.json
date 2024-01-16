@@ -1,0 +1,33 @@
+{
+  "name": "measurements",
+  "version": "1.0.0",
+  "description": "An app for displaying/manipulating the measurements data.",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=development parcel src/index.html",
+    "build": "NODE_ENV=production parcel build src/index.html --public-url './'",
+    "test": "jest"
+  },
+  "author": "Ivan Vasilev",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "chroma-js": "^2.0.6",
+    "d3": "^5.12.0",
+    "feather-icons": "^4.24.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.1.1",
+    "react-scripts": "3.1.1",
+    "react-select": "^3.0.8",
+    "react-table": "^7.0.0-rc.15",
+    "react-vis": "^1.11.7",
+    "redux": "^4.0.4",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3",
+    "sass": "^1.23.0-module.beta.1"
+  }
+}

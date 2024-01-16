@@ -1,0 +1,739 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap");
+*,
+*:active,
+*:focus {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+a,
+a:hover,
+a:active,
+a:visited {
+  color: inherit;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 62.5%;
+  color: #f2f2f2;
+}
+html * ::-webkit-scrollbar {
+  width: 10px;
+}
+html * ::-webkit-scrollbar-track {
+  background: rgba(242, 242, 242, 0.3);
+}
+html * ::-webkit-scrollbar-thumb {
+  background: rgba(204, 204, 204, 0.65);
+}
+html * ::-webkit-scrollbar-thumb:hover {
+  background: #cccccc;
+}
+
+body {
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  background-image: url("/background.59c06501.png");
+  background-size: cover;
+}
+
+.toast-alert-success {
+  background-color: #6bbd6e;
+}
+
+.toast-alert-error {
+  background-color: #f66359;
+}
+
+.toast-alert-warning {
+  background-color: #ffaa2c;
+}
+
+.toast-alert-info {
+  background-color: #47a8f5;
+}
+
+#reactContainer {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#main {
+  width: 100vw;
+  display: flex;
+}
+
+.left-panel {
+  min-height: 100vh;
+  transition: all 0.2s;
+}
+.left-panel-collapsed {
+  width: 1.25% !important;
+}
+.left-panel-expanded {
+  width: 25% !important;
+}
+
+#MeasurementContainer {
+  height: 100%;
+  background: rgba(7, 21, 47, 0.25);
+}
+#MeasurementContainer .measurementcontainer-controls {
+  padding-top: 1rem;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+#MeasurementContainer .measurementcontainer-controls-group {
+  width: 95%;
+  min-height: 5.2rem;
+  padding: 0 2rem;
+  margin: 1rem auto 0 auto;
+  background-color: rgba(7, 21, 47, 0.25);
+}
+#MeasurementContainer .measurementcontainer-controls-group__calculation-header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding-bottom: 2rem;
+}
+#MeasurementContainer .measurementcontainer-controls-group__calculation-header label {
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 5.2rem;
+}
+#MeasurementContainer .measurementcontainer-controls-group__calculation-header button {
+  font-size: 1.2rem;
+  align-self: center;
+}
+#MeasurementContainer .measurementcontainer-controls-group-calculation-field {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+}
+#MeasurementContainer .measurementcontainer-controls-group-calculation-field select {
+  width: 40%;
+}
+#MeasurementContainer .measurementcontainer-controls-group-calculation-field button {
+  font-size: 1rem;
+  border: none;
+}
+#MeasurementContainer .measurementcontainer-controls-group-group-time__header-content {
+  display: flex;
+  justify-content: space-between;
+}
+#MeasurementContainer .measurementcontainer-controls-group-group-time__header-content label {
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 5.2rem;
+}
+#MeasurementContainer .measurementcontainer-controls-group-group-time__header p {
+  width: 100%;
+  font-size: 1.1rem;
+  display: block;
+  padding-bottom: 1.5rem;
+}
+#MeasurementContainer .measurementcontainer-controls-group-query-reports-label {
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 5.2rem;
+  vertical-align: middle;
+}
+#MeasurementContainer .measurementcontainer-controls-group-query-reports-checkbox {
+  margin-left: 1rem;
+  cursor: pointer;
+  vertical-align: middle;
+}
+#MeasurementContainer .measurementcontainer-controls-group-dategroup {
+  min-height: 5.2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#MeasurementContainer .measurementcontainer-controls-group-dategroup label {
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 5.2rem;
+}
+#MeasurementContainer .measurementcontainer-controls-group-dategroup input[type=date] {
+  width: 40%;
+}
+#MeasurementContainer .measurementcontainer-controls-group-dategroup input[type=time] {
+  width: 30%;
+}
+#MeasurementContainer .measurementcontainer-controls-group #UsernameField {
+  display: flex;
+  justify-content: space-between;
+}
+#MeasurementContainer .measurementcontainer-controls-group #UsernameField label {
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 5.2rem;
+}
+#MeasurementContainer .measurementcontainer-controls-group #UsernameField input {
+  width: 70%;
+}
+#MeasurementContainer .measurementcontainer-controls-group-multiselects {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+#MeasurementContainer .measurementcontainer-controls-header {
+  width: 95%;
+  margin: 0 auto;
+  height: 10.8rem;
+  background-color: rgba(7, 21, 47, 0.25);
+}
+#MeasurementContainer .measurementcontainer-controls-header-text {
+  font-size: 2.7rem;
+  font-weight: 300;
+  text-align: center;
+  line-height: 10.8rem;
+}
+#MeasurementContainer .measurementcontainer-controls-header-text-bold {
+  font-weight: 700;
+}
+#MeasurementContainer .measurementcontainer-controls-collapsed {
+  display: none;
+}
+#MeasurementContainer .measurementcontainer-controls-expanded {
+  display: inline-block;
+  width: 95%;
+}
+#MeasurementContainer .measurementcontainer-slider-button {
+  height: 100%;
+  float: right;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(7, 21, 47, 0.25);
+  cursor: pointer;
+}
+#MeasurementContainer .measurementcontainer-slider-button img {
+  display: block;
+  margin: auto;
+}
+#MeasurementContainer .measurementcontainer-slider-button-collapsed {
+  width: 100%;
+}
+#MeasurementContainer .measurementcontainer-slider-button-expanded {
+  width: 5%;
+}
+
+#ChartContainer {
+  height: 100%;
+  display: grid;
+  grid-template-rows: minmax(5.2rem, auto);
+  grid-auto-rows: 1fr;
+}
+#ChartContainer .chartcontainer-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+}
+#ChartContainer .chartcontainer-controls-group {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  width: 31.5%;
+  min-height: 5.2rem;
+  background-color: rgba(7, 21, 47, 0.25);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+#ChartContainer .chartcontainer-controls-group label {
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 5.2rem;
+}
+#ChartContainer .chartcontainer-controls-group select {
+  width: 30%;
+}
+
+.search-controls,
+.search-results {
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 0.4rem;
+  background-color: rgba(7, 21, 47, 0.25);
+}
+.search-controls span,
+.search-results span {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 100;
+  min-height: 5.2rem;
+  line-height: 5.2rem;
+}
+
+.search-results {
+  height: 100%;
+}
+
+.chart-render {
+  display: flex;
+}
+.chart-render svg {
+  margin: auto;
+}
+
+.chart-pagination {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.measurementcontainer-contentwrapper {
+  width: 100%;
+}
+.measurementcontainer-header {
+  font-size: 2.7rem;
+  font-weight: 100;
+  line-height: 15vh;
+  color: #f2f2f2;
+  text-align: center;
+  display: block;
+  height: 15vh;
+}
+.measurementcontainer-content {
+  width: 80%;
+  height: 70vh;
+  display: block;
+  margin: 0 auto;
+  background-color: rgba(7, 21, 47, 0.25);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+}
+.measurementcontainer-content__nocontent {
+  color: #f2f2f2;
+  font-size: 2.4rem;
+  text-align: center;
+  padding-top: 2rem;
+}
+.measurementcontainer-footer {
+  display: flex;
+  width: 100%;
+  height: 15vh;
+}
+.measurementcontainer-footer img {
+  margin: auto;
+}
+
+.react-select-container .react-select__placeholder {
+  font-weight: 300;
+  color: #f2f2f2;
+}
+.react-select-container .react-select__menu {
+  background-color: #07152f;
+}
+.react-select-container .react-select__menu-list-item:hover, .react-select-container .react-select__menu-list-item:focus, .react-select-container .react-select__menu-list-item:active {
+  background-color: white !important;
+  color: black !important;
+}
+.react-select-container .react-select__option--is-focused {
+  background-color: white !important;
+  color: black !important;
+}
+.react-select-container .react-select__option-selected {
+  background-color: white !important;
+  color: black !important;
+}
+.react-select-container .react-select__option-selected:hover, .react-select-container .react-select__option-selected:focus, .react-select-container .react-select__option-selected:active {
+  background-color: white !important;
+  color: black !important;
+}
+.react-select-container .react-select__control {
+  box-shadow: none;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #f2f2f2;
+  border-radius: 0;
+}
+.react-select-container .react-select__control:hover {
+  border-color: #07152f;
+}
+.react-select-container .react-select__multi-value {
+  background-color: rgba(7, 21, 47, 0.25);
+}
+.react-select-container .react-select__multi-value__label {
+  font-size: 1.4rem;
+  color: #f2f2f2;
+}
+.react-select-container .react-select__value-container {
+  padding: 0;
+}
+.react-select-container .react-select__indicators:hover path, .react-select-container .react-select__indicators:active path, .react-select-container .react-select__indicators:focus path {
+  fill: #07152f;
+}
+.react-select-container .react-select__indicators path {
+  fill: #cccccc;
+}
+
+#Tooltip {
+  display: grid;
+  grid-template-columns: auto;
+  border-radius: 0.5rem;
+  background: #032c40;
+}
+#Tooltip * {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #f2f2f2;
+  margin: 0;
+}
+#Tooltip div {
+  padding: 1rem;
+}
+#Tooltip div:nth-child(odd) {
+  background: #033747;
+}
+#Tooltip .tooltip__title {
+  font-weight: 700;
+}
+#Tooltip .tooltip__value {
+  margin-bottom: 1rem;
+}
+#Tooltip .tooltip__value:last-child {
+  margin-bottom: 0;
+}
+
+#RangedInput {
+  padding: 2rem 0;
+  border-radius: 0.2rem;
+}
+#RangedInput .rangedinput-heading {
+  display: flex;
+  justify-content: space-between;
+}
+#RangedInput .rangedinput-heading label {
+  font-size: 1.7rem;
+  font-weight: 700;
+  align-self: center;
+}
+#RangedInput .rangedinput-toggle {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+#RangedInput .rangedinput-toggle-group {
+  width: 40%;
+  cursor: pointer;
+}
+#RangedInput .rangedinput-toggle-group * {
+  cursor: pointer;
+}
+#RangedInput .rangedinput-toggle-group img {
+  height: 1.7rem;
+  vertical-align: middle;
+}
+#RangedInput .rangedinput-toggle-group label {
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding-left: 0.5rem;
+  margin-right: 1rem;
+  vertical-align: middle;
+}
+#RangedInput .rangedinput-singular-group, #RangedInput .rangedinput-ranged-group {
+  margin-top: 0.5rem;
+}
+#RangedInput .rangedinput-singular-group {
+  display: flex;
+  justify-content: space-between;
+}
+#RangedInput .rangedinput-singular-group select {
+  width: 40%;
+}
+#RangedInput .rangedinput-singular-group input {
+  width: 50%;
+}
+#RangedInput .rangedinput-ranged-group {
+  display: flex;
+  justify-content: space-between;
+}
+#RangedInput .rangedinput-ranged-group__label {
+  font-size: 1.7rem;
+  font-weight: 300;
+}
+#RangedInput .rangedinput-ranged-group input {
+  width: 40%;
+}
+
+.react-table {
+  display: grid;
+  grid-template-rows: minmax(5.2rem, auto);
+  grid-auto-rows: 1fr;
+  height: 100%;
+}
+.react-table #table-checkboxes {
+  background-color: rgba(7, 21, 47, 0.25);
+  margin-bottom: 0.5rem;
+}
+.react-table .table-checkboxes-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+.react-table .table-checkboxes-header__title {
+  min-height: 5.2rem;
+  font-size: 2.2rem;
+  font-weight: 100;
+  line-height: 5.2rem;
+}
+.react-table .table-checkboxes-header__button {
+  border: none;
+  align-self: center;
+}
+.react-table .table-checkboxes-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+  padding: 0 2rem 2rem 2rem;
+}
+.react-table .table-checkboxes-content-checkbox {
+  font-size: 1.7rem;
+  line-height: 3rem;
+  height: 3rem;
+  vertical-align: middle;
+  width: 100%;
+}
+.react-table .table-checkboxes-content-checkbox label {
+  width: 100%;
+}
+.react-table .table-checkboxes-content-checkbox input, .react-table .table-checkboxes-content-checkbox label input {
+  height: 2.4rem;
+  width: 2.4rem;
+  vertical-align: middle;
+}
+.react-table-wrapper {
+  overflow-y: auto;
+}
+.react-table-wrapper__table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+}
+.react-table-wrapper__table thead {
+  background: rgba(7, 21, 47, 0.25);
+}
+.react-table-wrapper__table thead .global-filter {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.472) !important;
+}
+.react-table-wrapper__table thead tr {
+  background-color: rgba(7, 21, 47, 0.25);
+}
+.react-table-wrapper__table thead tr th {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+}
+.react-table-wrapper__table thead tr th * {
+  vertical-align: middle;
+  line-height: 2rem;
+}
+.react-table-wrapper__table thead tr th input,
+.react-table-wrapper__table thead tr th select {
+  width: 90% !important;
+}
+.react-table-wrapper__table tbody tr:nth-child(even) {
+  background-color: rgba(7, 21, 47, 0.25);
+}
+.react-table-wrapper__table tbody tr {
+  text-align: center;
+}
+.react-table-wrapper__table tbody tr td {
+  padding: 1rem 1rem;
+}
+.react-table-wrapper__pagination {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.react-table-wrapper__pagination-doubleback, .react-table-wrapper__pagination-back, .react-table-wrapper__pagination-forward, .react-table-wrapper__pagination-doubleforward {
+  border: none !important;
+}
+.react-table-wrapper__pagination-pagenumbering {
+  border: none !important;
+  align-self: center;
+}
+.react-table-wrapper__pagination-pagenumbering:hover {
+  background: none !important;
+}
+.react-table-wrapper__pagination-gotopage {
+  padding-left: 2rem;
+  font-size: 1.4rem;
+  align-self: center;
+}
+.react-table-wrapper__pagination-pagesize {
+  width: auto;
+}
+
+.toggle {
+  direction: ltr;
+  width: 1.5rem;
+  height: 0.75rem;
+  border: 0.1rem solid lightslategray;
+  border-radius: 0.1rem;
+  background-color: #ccc;
+  padding: 0.2rem;
+  cursor: pointer;
+}
+.toggle-on {
+  direction: rtl !important;
+  background-color: salmon !important;
+}
+.toggle__rect {
+  height: 100%;
+  width: 50%;
+  background-color: white;
+  align-self: center;
+}
+
+button {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8rem;
+  border-radius: 0.7rem;
+  height: 3.4rem;
+  transition: all 0.3 ease-in-out;
+}
+
+.button-transparent {
+  color: #cccccc;
+  background: none;
+  border: 1px solid #f2f2f2;
+}
+.button-transparent:hover {
+  color: #000000;
+  background-color: #cccccc;
+  border: 1px solid #cccccc;
+}
+.button-transparent:active {
+  color: #cccccc;
+  background: none;
+  border: 1px solid #f2f2f2;
+}
+
+.button-transparent-selected {
+  color: #000000;
+  background-color: #cccccc;
+  border: 1px solid #cccccc;
+}
+.button-transparent-selected:active {
+  color: #cccccc;
+  background: none;
+  border: 1px solid #f2f2f2;
+}
+
+.button-opaque {
+  color: #000000;
+  background-color: #cccccc;
+  border: 1px solid #cccccc;
+}
+.button-opaque:hover {
+  color: #cccccc;
+  background: none;
+  border: 1px solid #f2f2f2;
+}
+.button-opaque:active {
+  color: #000000;
+  background-color: #cccccc;
+  border: 1px solid #cccccc;
+}
+
+.button-wide {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.button-narrow {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.error-border {
+  border-bottom: 1px solid #f70067;
+}
+
+.display-flex-evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.max-width {
+  width: 100%;
+}
+
+.two-button-div {
+  width: 100%;
+  display: flex;
+  margin: auto;
+  justify-content: space-evenly;
+}
+
+.margin-top-one-rem {
+  margin-top: 1rem;
+}
+
+input,
+select {
+  width: 60%;
+  background: none;
+  text-align: left;
+  font-size: 1.4rem;
+  color: #f2f2f2;
+  font-weight: 300;
+  border: 0;
+  border-bottom: 1px solid rgba(242, 242, 242, 0.35);
+  padding: 0.2rem 0;
+  transition: all 0.3s ease-in-out;
+  height: 60%;
+  align-self: center;
+}
+input:hover,
+select:hover {
+  border-color: #07152f;
+}
+
+input:focus {
+  padding: 0.2rem 0;
+}
+
+select:focus, select:active {
+  padding: 0.2rem 0;
+}
+select:focus {
+  background: #07152f !important;
+  color: #f2f2f2;
+}
+
+.run-query-button {
+  margin: 2rem auto;
+  display: block;
+}
+
+.d3-y-axis .tick line {
+  stroke: white;
+  opacity: 0.1;
+}
+
+.tick {
+  font-size: 1rem;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+/*# sourceMappingURL=/main.48b3db1d.css.map */
